@@ -104,9 +104,9 @@ RecHitAnalyzer::RecHitAnalyzer(const edm::ParameterSet& iConfig)
   }
   //branchesEB           ( RHTree, fs );
   //branchesEE           ( RHTree, fs );
-  branchesHBHE         ( RHTree, fs );
+  //branchesHBHE         ( RHTree, fs );
   //branchesECALatHCAL   ( RHTree, fs );
-  branchesECALstitched ( RHTree, fs );
+  //branchesECALstitched ( RHTree, fs );
   //branchesHCALatEBEE   ( RHTree, fs );
   //branchesTracksAtEBEE(RHTree, fs);
   // branchesTracksAtECALstitched( RHTree, fs);
@@ -117,8 +117,8 @@ RecHitAnalyzer::RecHitAnalyzer(const edm::ParameterSet& iConfig)
   //branchesTRKvolumeAtECAL(RHTree, fs);
   // branchesTracksAtECALadjustable( RHTree, fs);
   // branchesTRKlayersAtECALadjustable(RHTree, fs);
-  // branchesGenParticles( RHTree, fs );
-  // branchesJetPFCands( RHTree, fs );
+  branchesGenParticles( RHTree, fs );
+  branchesJetPFCands( RHTree, fs );
 
   // For FC inputs
   //RHTree->Branch("FC_inputs",      &vFC_inputs_);
@@ -178,9 +178,9 @@ RecHitAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
   //fillEB( iEvent, iSetup );
   //fillEE( iEvent, iSetup );
-  fillHBHE( iEvent, iSetup );
+  // fillHBHE( iEvent, iSetup );
   //fillECALatHCAL( iEvent, iSetup );
-  fillECALstitched( iEvent, iSetup );
+  // fillECALstitched( iEvent, iSetup );
   //fillHCALatEBEE( iEvent, iSetup );
   //fillTracksAtEBEE( iEvent, iSetup );
   // for (unsigned int i=0;i<Nproj;i++)
@@ -198,8 +198,8 @@ RecHitAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
   // }
   // fillPFCandsAtECALstitched( iEvent, iSetup );
   // fillTRKlayersAtEBEE( iEvent, iSetup );
-  // fillGenParticles( iEvent, iSetup );
-  // fillJetPFCands( iEvent, iSetup );
+  fillGenParticles( iEvent, iSetup );
+  fillJetPFCands( iEvent, iSetup );
   //fillTRKlayersAtECALstitched( iEvent, iSetup );
   //fillTRKvolumeAtEBEE( iEvent, iSetup );
   //fillTRKvolumeAtECAL( iEvent, iSetup );
